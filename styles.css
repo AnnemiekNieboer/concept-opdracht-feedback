@@ -1,0 +1,872 @@
+/* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@300;400;700&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* --------------- 1.2 Colors ------------------- */
+
+:root {
+    --main-focus-color: #5722CD;
+    --main-button-color: #ED4385;
+    --main-font-color-light: white;
+    --main-font-color-dark: #0C0C0C;
+    --main-font-color-medium:#7A7A7A;
+    --main-background-color-darker: #F3F6F9;
+    --main-shadow-focus-color: #451ba2;
+    --main-shadow-color: #a8a8a8;
+    --main-shadow-color-light: #d7d5d5;
+    --main-gradient-color: linear-gradient(to right, rgb(74, 73, 231), rgb(87, 34, 205));
+}
+
+/* --------------- 1.3 Setup Borders (temporary) ------------------- */
+
+/*header,*/
+/*.main__outer-container {*/
+/*    border: 3px solid red;*/
+/*}*/
+
+/*.header___inner-container,*/
+/*.main__inner-container,*/
+/*.main__about-section,*/
+/*.main__services--inner-container,*/
+/*.footer__inner-container,*/
+/*.footer__form--form-section,*/
+/*.footer__form {*/
+/*    border: 3px solid greenyellow;*/
+/*}*/
+
+/*.navigation,*/
+/*.header___hero-section,*/
+/*.header___squiggle-line,*/
+/*.main__paragraph--about-section,*/
+/*.main__paragraph--cta-line,*/
+/*#main__content-section {*/
+/*    border: 3px solid yellow;*/
+/*}*/
+
+/*.main__content-article,*/
+/*.main__content-article--image,*/
+/*.main__content-article--block*/
+/*{*/
+/*    border: 3px solid blue;*/
+/*}*/
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+body a {
+    text-decoration: none;
+    color: var(--main-focus-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    /*margin: 20px;*/
+    margin: 5px;
+    font-size: 70px;
+}
+
+h1::first-letter {
+    text-transform: uppercase;
+}
+
+h3::first-letter {
+    text-transform: uppercase;
+}
+
+nav {
+    text-transform: capitalize;
+}
+
+button {
+    font-family: inherit;
+}
+
+h2 {
+    margin: 10px 0 10px 0;
+}
+
+h4 {
+    color: var(--main-focus-color);
+    font-size: 18px;
+}
+
+.navigation__list-items {
+    text-align: center;
+}
+
+.navigation___link {
+    color: var(--main-font-color-light);
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.main__paragraph--h2 {
+    font-size: 42px;
+}
+
+.main__paragraph--cta-line {
+    font-size: 35px;
+}
+
+.main__content-article--header {
+    text-transform: capitalize;
+    font-size: 60px;
+}
+
+.main__content-article--paragraph {
+    font-size: 40px;
+}
+
+.content-article--link {
+    display: block;
+    margin-top: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.footer__copyright-paragraph {
+    text-align: center;
+    color: var(--main-font-color-light);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.services__block--paragraph {
+    color: var(--main-font-color-medium);
+    margin-top: 5em;
+    font-size: 13px;
+}
+
+.footer__form--header {
+    color: var(--main-font-color-light);
+    font-size: 4.5em;
+    margin: 0.5em;
+    text-align: center;
+}
+
+.footer__form--paragraph {
+    text-align: center;
+    color: var(--main-font-color-light);
+    font-weight: 300;
+    font-size: 40px;
+    margin: 1em 0;
+}
+
+.footer__form--form-section {
+    color: var(--main-font-color-light);
+    font-size: 30px;
+}
+
+.form__input[type=text],
+.form__input--text-area {
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+}
+
+.footer__copyright-paragraph {
+    font-size: 25px;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+.main__inner-container a:link{
+    color: var(--main-focus-color);
+}
+
+.main__inner-container a:visited{
+    color: var(--main-shadow-focus-color);
+}
+
+.main__outer-container {
+    display: flex;
+    /*let op hier row in column verandert voor de triangles!!!*/
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: stretch;*/
+    width: 100%;
+    /*let op hier position relative toegevoegd voor triangles!!!*/
+    position: relative;
+}
+
+.main__cta-button,
+.main__cta-button--footer {
+    background-color: var(--main-button-color);
+    padding: 40px 90px;
+    margin: 20px;
+    border: none;
+    border-radius: 60px;
+    color: var(--main-font-color-light);
+    text-transform: uppercase;
+    cursor: pointer;
+    /*font-size: 12px;*/
+    font-size: 29px;
+    box-shadow: 0 8px 10px var(--main-shadow-focus-color);
+    z-index: 1;
+}
+
+.main__cta-button--footer {
+    padding: 45px 140px;
+}
+
+/* ------------------------------- 4. Areas --------------------------------------- */
+
+/* --------------- 4.1 Header ------------------- */
+
+.header__outer-container,
+.projects__header--outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    background-image: var(--main-gradient-color);
+    color: var(--main-font-color-light);
+}
+
+.header__inner-container,
+.projects__header--inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 67vh;
+}
+
+
+/* --------------- 4.1b Header-Projects-page ------------------- */
+
+.projects__header--inner-container {
+    justify-content: center;
+    height: 98vh;
+}
+
+/* --------------- 4.2 Header-Navigation ------------------- */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2em;
+    margin: 4em 2em;
+    width: 100%;
+}
+
+.navigation___link:visited{
+    color: var(--main-font-color-light);
+}
+
+/* --------------- 4.3 Header-Hero-section ------------------- */
+
+.header__inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: -42px;
+    z-index: 1;
+}
+
+.header__hero-section > h1 {
+    text-align: center;
+}
+
+.header__hero-section-paragraph {
+    font-size: 54px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    margin: 1em;
+}
+
+.header__squiggle-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1em;
+    height: 200px;
+    z-index: 1;
+}
+
+.squiggle-line {
+    height: 150%;
+}
+
+/* --------------- 4.4 Main-About-section ------------------- */
+
+.main__inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main__about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 54vh;
+    background-color: var(--main-font-color-light);
+    margin-top: 2em;
+    padding: 40px 10px;
+    width: 100%;
+}
+
+.main__paragraph--about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__paragraph--h2 {
+    color: var(--main-focus-color);
+    text-align: center;
+    margin: 40px;
+    padding: 0 20px 0 20px;
+    width: 100%;
+}
+
+.main__paragraph--cta-line {
+    color: var(--main-font-color-dark);
+    text-align: center;
+    margin: 70px;
+    padding: 30px;
+}
+
+/* --------------- 4.5 Main-Articles-section------------------- */
+
+#main__content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-background-color-darker) ;
+}
+
+.main__content-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 75vh;
+}
+
+.main__content-article:first-of-type{
+    margin-top: 13em;
+}
+
+.main__content-article--block,
+.content-article__block2 {
+    flex-basis: 100px;
+    margin: 30px;
+    flex-grow: 1;
+}
+
+.main__content-article--image {
+    position: relative;
+    order: -1;
+    width: 100%;
+    margin: 30px;
+}
+
+
+.main__content-article--image > img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 30px -10px var(--main-shadow-color);
+}
+
+/* --------------- 4.6 Main-Services------------------- */
+
+#main__services--inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2em;
+    margin: 200px 0 50px 0;
+    padding: 50px 0 50px 0;
+}
+
+.services--block {
+    border: 1px solid var(--main-focus-color);
+    padding: 4.5em 4.5em 4.5em 4.5em;
+    margin: 0 100px 0 100px;
+    background-color: var(--main-font-color-light);
+    box-shadow: 0 20px 30px -10px var(--main-shadow-color-light);
+    aspect-ratio: 1 / 1;
+}
+
+.services__block--image {
+    width: 10em;
+    margin: 1em 1em 0.5em 0;
+}
+
+/* --------------- 4.7 Footer-Form------------------- */
+
+#footer__outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--main-gradient-color);
+    width: 100%;
+}
+
+.footer__inner-container {
+    width: 100%;
+    flex-basis: 90vh;
+}
+
+.footer__form,
+.footer__inner-container,
+.footer__form--form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__form {
+    width: 95%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.footer__form--form-section {
+    width: 100%;
+    margin: 2em 0 2em 0;
+}
+
+.form__input {
+    width: 100%;
+}
+
+label {
+    margin: 1em;
+}
+
+input[type=text],
+textarea {
+    padding: 1em;
+    border-radius: 2px;
+    border: none;
+    resize: none;
+}
+
+/* --------------- 4.8 Footer-Copyright-section------------------- */
+
+.footer__copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-font-color-dark);
+    height: 8em;
+}
+
+/* ------------------------------- 5. Bonus add-on features --------------------------------------- */
+
+/* --------------- 5.1 Pseudo elements-Text-items ------------------- */
+
+.main__about-section{
+    position: relative;
+}
+
+.main__paragraph--about-section::before{
+    content: "hello";
+    display: block;
+    position: absolute;
+    top: -40px;
+    width: 90%;
+    height: 30%;
+    text-align: center;
+    font-size: 25em;
+    font-weight: 700;
+    color: var(--main-background-color-darker);
+    z-index: -1;
+}
+
+.main__paragraph--about-section {
+    z-index: 2;
+}
+
+#main__content-section {
+    position: relative;
+}
+
+.main__content-article--pseudo::after {
+    content: "work";
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    height: 30%;
+    text-align: center;
+    font-size: 25em;
+    font-weight: 700;
+    color: var(--main-font-color-light);
+    z-index: -1;
+}
+
+.main__content-article {
+    z-index: 2;
+}
+
+#main__services--inner-container {
+    position: relative;
+}
+
+#main__services--inner-container::before{
+    content: "services";
+    display: block;
+    position: absolute;
+    top: -150px;
+    width: 90%;
+    height: 30%;
+    text-align: center;
+    font-size: 15em;
+    font-weight: 700;
+    color: var(--main-background-color-darker);
+    z-index: -1;
+}
+
+/* --------------- 5.2 Pseudo elements-Sqewed-triangles ------------------- */
+
+.header--pseudo-skew::after,
+.main__content-section--pseudo-skew::before,
+.services__inner-container--pseudo-skew::before,
+.footer-section--pseudo-skew::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid transparent;
+    border-bottom: 0 solid transparent;
+    position: relative;
+}
+
+.header--pseudo-skew::after,
+.services__inner-container--pseudo-skew::before,
+.footer-section--pseudo-skew::before {
+    border-left: 100vw solid var(--main-font-color-light);
+    top: -38px;
+}
+
+.main__content-section--pseudo-skew::before {
+    border-right: 100vw solid var(--main-background-color-darker);
+}
+
+.footer-section--pseudo-skew::before {
+    border-top: 0 solid transparent;
+    border-bottom: 2.5em solid transparent;
+    top: 38px;
+    z-index: 1;
+}
+
+/* --------------- 5.3 Pseudo elements-Animated-link-lines ------------------- */
+
+.content-article--link {
+    display: flex;
+}
+
+.content-article--link::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--main-focus-color);
+    margin-left: 1em;
+    align-self: center;
+}
+
+/* --------------- 5.4 Pseudo element squiggle line ------------------- */
+
+.main__content-article--pseudo-item-squiggle-line::before {
+    content: "";
+    display: block;
+    background-image: url("assets/img/squiggle_line.svg");
+    margin: 50px 0 80px 0;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* --------------- 5.5 Grain on gradient ------------------- */
+
+
+.header__outer-container::after,
+#footer__outer-container::after,
+.projects__header--outer-container::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 67vh;
+    background-image: url("assets/img/noise-texture.png");
+    position: absolute;
+    z-index: 0;
+    opacity: 60%;
+}
+
+#footer__outer-container::after {
+    height: 90vh;
+}
+
+.projects__header--outer-container::after {
+    height: 98vh;
+}
+
+
+
+/* --------------- 5.5 Bonus-add-ons-Media Queries ------------------- */
+
+/*For mobile and tablet*/
+@media screen and (min-width: 1200px){
+    /*--------------- 5.1 Pseudo elements-Text-items ---------------*/
+    .main__content-article--pseudo::after {
+        top: -40px;
+    }
+    /*--------------- 5.3 Pseudo elements-Animated-link-lines ---------------*/
+    .content-article--link::after {
+        width: 15px;
+        height: 1px;
+        transition: width 0.3s ease-in-out;
+    }
+    .content-article--link:hover::after{
+        width: 60px;
+    }
+    /*--------------- 5.4 Pseudo element squiggle line ---------------*/
+    .main__content-article--pseudo-item-squiggle-line::before {
+        background-size: 60%;
+        margin: 30px 0 20px 0;
+    }
+    /*--------------- 5.5 Grain on gradient ---------------*/
+    .header__outer-container::after {
+        height: 550px;
+    }
+    #footer__outer-container::after {
+        height: 727px;
+    }
+}
+
+/* ------------------------------- 6. Media Queries --------------------------------------- */
+
+/*For mobile and tablet*/
+@media screen and (min-width: 1200px){
+    /*--------------- 2. Typography ---------------*/
+    h1 {
+        font-size: 32px;
+        margin: 20px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .navigation___link {
+        font-size: 14px;
+    }
+    .main__paragraph--h2 {
+        font-size: 24px;
+    }
+    .main__paragraph--cta-line {
+        font-size: 16px;
+    }
+    .main__content-article--header {
+        font-size: 24px;
+    }
+    .main__content-article--paragraph {
+        font-size: 16px;
+    }
+    .content-article--link {
+        font-size: 11px;
+        margin: 40px 40px 40px 0;
+    }
+    .services__block--paragraph {
+        margin-top: 2em;
+        font-size: 12px;
+    }
+    .footer__form--header {
+        font-size: 2em;
+    }
+    .footer__form--paragraph {
+        font-size: 16px;
+        margin: 0.5em;
+    }
+    .footer__form--form-section {
+        font-size: 11px;
+    }
+    .form__input[type=text],
+    .form__input--text-area {
+        font-size: 14px;
+    }
+    .footer__copyright-paragraph {
+        font-size: 10px;
+    }
+    /*--------------- 3. Layout ---------------*/
+    .main__cta-button {
+        padding: 15px 30px;
+        border-radius: 30px;
+        margin: 20px;
+        font-size: 12px;
+    }
+    .main__cta-button--footer {
+        padding: 15px 60px;
+    }
+    /*--------------- 4. Areas ---------------*/
+    /*---4.1 Header---*/
+    .header__inner-container {
+        flex-basis: 1200px;
+    }
+    .header__outer-container {
+        height: 550px;
+    }
+    /*---4.2 Header-Navigation ---*/
+    .navigation__list {
+        justify-content: flex-end;
+        margin: 1em 2em;
+    }
+    /*---4.3 Header-Hero-section ---*/
+    .header__inner-container {
+        max-width: 1200px;
+        height: 100%;
+    }
+    .header__hero-section {
+        width: 60%;
+        margin: 2em;
+        top: 0;
+    }
+    .header__hero-section-paragraph {
+        margin: 0.5em;
+        font-size: 18px;
+    }
+    .squiggle-line {
+        height: 70%;
+    }
+    /*---4.4 Main-About-section ---*/
+    .main__inner-container {
+        flex-basis: 1200px;
+    }
+    .main__about-section {
+        flex-basis: 500px;
+    }
+    .main__paragraph--about-section {
+        width: 70%;
+    }
+    .main__paragraph--h2 {
+        margin: 30px 10px;
+        padding: 0 20px 0 20px;
+    }
+    .main__paragraph--cta-line {
+        margin: 0;
+    }
+    /*---4.5 Main-Articles-section ---*/
+    .main__content-article {
+        height: 500px;
+        max-width: 1200px;
+    }
+    .main__content-article:first-of-type{
+        margin-top: 8em;
+    }
+    .main__content-article--block {
+        margin: 110px 140px 80px 50px;
+        padding-right: 100px;
+    }
+    .content-article__block2 {
+        margin: 110px 50px 80px 180px;
+    }
+    .main__content-article--image {
+        margin: 0;
+        width: auto;
+    }
+    .main__content-article--image > img {
+        width: 600px;
+        height: auto;
+    }
+    .content-article__image1 {
+        top: 25px;
+    }
+    .content-article__image2 {
+        padding-left: 10px;
+    }
+    .content-article__image3 {
+        top: -30px;
+    }
+    .content-article__image1,
+    .content-article__image3 {
+        margin-right: 10px;
+        order: 1;
+    }
+
+    /*---4.6 Main-Services-section ---*/
+    #main__services--inner-container {
+        max-width: 1200px;
+        padding: 50px 100px 50px 100px;
+        margin-top: 6em;
+    }
+    .services--block {
+        flex-basis: 300px;
+        height: 300px;
+        flex-grow: 0;
+        margin: 0;
+        padding: 2em 2em 2em 2em;
+    }
+    .services__block--image {
+        width: 4em;
+    }
+    /*---4.7 Footer-Form ---*/
+    .footer__inner-container {
+        width: 1200px;
+        flex-basis: 600px;
+    }
+    .footer__form {
+        width: 60%;
+        max-width: 700px;
+    }
+    /*---4.8 Footer-Copyright-Section ---*/
+    .footer__copyright {
+        height: 2em;
+    }
+}
